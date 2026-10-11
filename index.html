@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dental Clinic DC | Gestión Odontológica UMG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+:root{--navy:#123b56;--blue:#087f9c;--cyan:#20c4d8;--pale:#e9f9fc;--bg:#f4f9fb;--white:#fff;--muted:#718797;--line:#e4edf1;--green:#1a9b75;--shadow:0 8px 28px rgba(22,77,99,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:'Nunito Sans',sans-serif;background:var(--bg);color:var(--navy)}button,a{font:inherit}button{cursor:pointer}.topbar{height:76px;background:white;display:flex;align-items:center;justify-content:space-between;padding:0 5%;box-shadow:0 2px 15px #123b560d;position:sticky;top:0;z-index:10}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--navy)}.brand svg{width:48px;height:52px}.brand-name{font-weight:800;font-size:20px;letter-spacing:.5px;line-height:1.1}.brand-name small{display:block;color:var(--blue);font-size:11px;letter-spacing:2.3px;margin-top:5px}.nav{display:flex;gap:24px;align-items:center}.nav a{text-decoration:none;color:#456477;font-weight:700;font-size:14px}.nav a:hover{color:var(--cyan)}.btn{border:0;border-radius:10px;background:var(--blue);color:white;padding:11px 17px;font-weight:800;box-shadow:0 5px 12px #087f9c22}.btn:hover{background:#06677f}.btn-light{background:#e7f8fb;color:var(--blue);box-shadow:none}.hero{padding:66px 7%;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:35px;background:linear-gradient(120deg,#e9f9fc,#f7fdff)}.eyebrow{color:var(--blue);font-weight:800;font-size:12px;letter-spacing:2px}.hero h1{font-size:clamp(36px,5vw,60px);line-height:1.06;margin:15px 0;color:#103951}.hero h1 span{color:var(--blue)}.hero p{max-width:560px;color:#577486;font-size:17px;line-height:1.8}.hero-art{display:flex;justify-content:center;align-items:center;min-height:270px}.hero-art svg{width:min(75%,330px);filter:drop-shadow(0 20px 20px #0b819a24)}.section{padding:55px 6%}.section-heading{text-align:center;margin:0 auto 30px}.section-heading h2{font-size:30px;margin:0 0 9px}.section-heading p{margin:0;color:var(--muted)}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature{background:white;padding:24px;border-radius:16px;box-shadow:var(--shadow)}.feature .bubble{width:45px;height:45px;border-radius:13px;background:var(--pale);display:grid;place-items:center;color:var(--blue);font-size:23px}.feature h3{margin:15px 0 8px}.feature p{color:var(--muted);line-height:1.7;margin:0}.dashboard-wrap{background:#eef7fa;padding:58px 5%}.dash-head{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:24px}.dash-head h2{margin:0;font-size:30px}.dash-head p{margin:5px 0 0;color:var(--muted)}.dash-controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.dash-controls select{padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:white;color:var(--navy)}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:18px}.kpi{background:white;padding:20px;border-radius:15px;box-shadow:var(--shadow);border:1px solid #edf3f5}.kpi-top{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:13px;font-weight:700}.kpi-icon{width:38px;height:38px;display:grid;place-items:center;border-radius:12px;background:var(--pale);color:var(--blue);font-size:19px}.kpi-value{font-size:30px;font-weight:800;margin:13px 0 5px;letter-spacing:-.5px}.kpi-note{font-size:12px;color:var(--green)}.charts{display:grid;grid-template-columns:1.35fr 1fr;gap:18px}.chart-card{background:white;border-radius:16px;padding:22px;box-shadow:var(--shadow);min-width:0}.chart-card.wide{grid-column:1/-1}.chart-title{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:18px}.chart-title h3{margin:0;font-size:17px}.chart-title p{margin:4px 0 0;color:var(--muted);font-size:12px}.chart-box{height:270px;position:relative}.chart-box.short{height:240px}.chart-box canvas{max-width:100%}.lower-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;text-align:left;font-size:13px}th{color:var(--muted);font-weight:800;background:#f7fbfc}th,td{padding:13px 10px;border-bottom:1px solid var(--line);white-space:nowrap}.status{padding:5px 9px;border-radius:20px;font-size:11px;font-weight:800}.done{background:#e2f7ef;color:#16845f}.pending{background:#fff3d8;color:#a16c09}.empty-note{color:var(--muted);font-size:12px;margin-top:12px}.footer{background:#123b56;color:#d8e9ef;padding:28px 5%;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px}.footer strong{color:white}.mobile-menu{display:none}
+
+.login-overlay{position:fixed;inset:0;background:rgba(9,42,61,.58);backdrop-filter:blur(7px);display:none;align-items:center;justify-content:center;padding:18px;z-index:1000}
+.login-overlay.show{display:flex}
+.login-panel{width:min(100%,430px);background:#fff;border-radius:25px;overflow:hidden;box-shadow:0 25px 80px #082b3c55;position:relative;animation:loginPop .25s ease-out}
+@keyframes loginPop{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.login-top{background:linear-gradient(140deg,#087f9c,#20c4d8);padding:28px 30px 25px;color:#fff;text-align:center;position:relative}
+.login-top .login-tooth{width:76px;height:82px;margin:0 auto 8px;display:block;filter:drop-shadow(0 6px 9px #034f6540)}
+.login-top h2{margin:6px 0 4px;font-size:25px}.login-top p{margin:0;color:#e7fcff;font-size:13px}
+.login-close{position:absolute;right:14px;top:12px;width:34px;height:34px;border:0;border-radius:50%;background:#ffffff2b;color:white;font-size:22px}
+.login-form{padding:28px 30px 30px}.login-form label{display:block;font-size:13px;font-weight:800;margin:0 0 7px;color:#234b60}
+.login-field{margin-bottom:17px}.login-input-wrap{display:flex;align-items:center;gap:10px;border:1px solid #dce9ee;border-radius:12px;padding:0 13px;background:#fbfdfe;transition:.2s}
+.login-input-wrap:focus-within{border-color:#20c4d8;box-shadow:0 0 0 3px #20c4d81c}
+.login-input-wrap span{font-size:18px;color:#087f9c}.login-input-wrap input{width:100%;min-width:0;border:0;outline:0;background:transparent;padding:14px 0;font:inherit;color:#123b56}
+.login-submit{width:100%;padding:14px;border:0;border-radius:12px;background:#087f9c;color:white;font-weight:800;font-size:15px;box-shadow:0 7px 15px #087f9c30}
+.login-submit:hover{background:#06677f}.login-error{display:none;margin:0 0 14px;background:#fff0f0;color:#b42332;border-radius:10px;padding:10px 12px;font-size:13px}.login-error.show{display:block}
+.login-hint{margin:16px 0 0;text-align:center;color:#718797;font-size:12px;line-height:1.6}
+.user-chip{display:none;align-items:center;gap:9px;padding:7px 11px;border-radius:30px;background:#e7f8fb;color:#087f9c;font-size:13px;font-weight:800}
+.user-chip.show{display:flex}.user-avatar{width:27px;height:27px;border-radius:50%;background:#087f9c;color:white;display:grid;place-items:center}
+@media(max-width:620px){.login-form{padding:24px 22px}.login-top{padding:25px 22px 22px}}
+
+@media(max-width:900px){.nav{gap:12px}.nav a{font-size:12px}.hero{padding:48px 5%}.kpis{grid-template-columns:repeat(2,1fr)}.charts{grid-template-columns:1fr}.chart-card.wide{grid-column:auto}.feature-grid{grid-template-columns:1fr}.lower-grid{grid-template-columns:1fr}}
+@media(max-width:620px){.topbar{padding:0 4%;height:68px}.brand svg{width:40px;height:44px}.brand-name{font-size:17px}.nav{display:none}.mobile-menu{display:block}.hero{grid-template-columns:1fr;text-align:center;padding:42px 6%}.hero p{margin-left:auto;margin-right:auto}.hero-art{min-height:190px}.hero-art svg{width:190px}.section{padding:42px 5%}.dashboard-wrap{padding:40px 4%}.dash-head h2{font-size:25px}.kpis{gap:10px}.kpi{padding:14px}.kpi-value{font-size:25px}.kpi-top{font-size:11px}.chart-card{padding:15px}.chart-box{height:235px}.chart-box.short{height:220px}.footer{padding:24px 5%}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#inicio" aria-label="Dental Clinic DC inicio">
+    <svg viewBox="0 0 100 110" role="img" aria-label="Logo DC con forma de diente">
+      <path d="M50 8 C31 1 11 13 10 36 C8 54 19 65 25 83 C30 101 40 106 45 87 L50 69 L55 87 C60 106 70 101 75 83 C81 65 92 54 90 36 C89 13 69 1 50 8Z" fill="#e7faff" stroke="#087f9c" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M51 26 C37 18 25 27 25 42 C25 56 36 63 48 55 L48 46 C39 51 34 45 35 39 C36 31 43 31 51 36Z" fill="#087f9c"/>
+      <path d="M54 26 L54 57 L67 57 C80 57 84 49 84 41 C84 31 77 26 67 26Z" fill="#20c4d8"/>
+      <path d="M62 34 L67 34 C74 34 76 37 76 42 C76 47 73 50 67 50 L62 50Z" fill="white"/>
+    </svg>
+    <span class="brand-name">DENTAL CLINIC UMG<small>TECNOLOGÍA Y SONRISAS</small></span>
+  </a>
+  <nav class="nav" aria-label="Navegación principal">
+    <a href="#inicio">Inicio</a><a href="#solucion">Solución</a><a href="#sistema">Sistema</a><a href="#dashboard">Dashboard</a>
+    <button class="btn" id="loginOpenBtn">Iniciar sesión</button>
+    <div class="user-chip" id="userChip"><span class="user-avatar">A</span><span>ADMIN</span><button class="btn btn-light" id="logoutBtn" style="padding:6px 9px">Salir</button></div>
+  </nav>
+  <button class="btn btn-light mobile-menu" onclick="document.getElementById('dashboard').scrollIntoView({behavior:'smooth'})">Dashboard </button>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div>
+    <div class="eyebrow">TRANSFORMACIÓN DIGITAL · 2026</div>
+    <h1>Una nueva forma de cuidar <span>sonrisas.</span></h1>
+    <p>Dental Clinic DC integra la atención odontológica y la tecnología para organizar citas, dar seguimiento a pacientes y visualizar el desempeño de la clínica.</p>
+    <button class="btn" onclick="document.getElementById('dashboard').scrollIntoView({behavior:'smooth'})">Explorar dashboard </button>
+  </div>
+  <div class="hero-art" aria-label="Ilustración del logo Dental Clinic">
+    <svg viewBox="0 0 220 240" role="img" aria-label="Diente con las letras DC">
+      <defs><linearGradient id="toothGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#d9f7fc"/></linearGradient></defs>
+      <path d="M110 22 C78 7 31 21 27 69 C23 104 45 129 56 168 C65 203 83 224 94 187 L110 145 L126 187 C137 224 155 203 164 168 C175 129 197 104 193 69 C189 21 142 7 110 22Z" fill="url(#toothGrad)" stroke="#087f9c" stroke-width="6" stroke-linejoin="round"/>
+      <path d="M111 62 C86 47 66 64 66 89 C66 111 84 123 105 111 L105 96 C91 105 80 97 81 86 C82 73 96 73 111 83Z" fill="#087f9c"/>
+      <path d="M120 61 L120 115 L142 115 C163 115 176 104 176 88 C176 71 163 61 142 61Z" fill="#20c4d8"/>
+      <path d="M133 75 L142 75 C154 75 160 79 160 89 C160 99 153 102 142 102 L133 102Z" fill="white"/>
+      <circle cx="177" cy="42" r="7" fill="#20c4d8"/><circle cx="43" cy="130" r="5" fill="#20c4d8"/>
+    </svg>
+  </div>
+</section>
+
+<section class="section" id="solucion">
+  <div class="section-heading"><h2>Una clínica conectada</h2><p>Herramientas pensadas para facilitar el trabajo diario de nuestro personal clínico y dental.</p></div>
+  <div class="feature-grid">
+    <article class="feature"><div class="bubble"></div><h3>Gestión de citas</h3><p>Organiza las citas y consulta el estado de la agenda de manera rápida.</p></article>
+    <article class="feature"><div class="bubble"></div><h3>Seguimiento de pacientes</h3><p>Centraliza la información necesaria para brindar una atención ordenada.</p></article>
+    <article class="feature"><div class="bubble"></div><h3>Indicadores visuales</h3><p>Consulta estadísticas de ejemplo para comprender el movimiento de la clínica.</p></article>
+  </div>
+</section>
+
+<section class="dashboard-wrap" id="dashboard">
+  <div class="dash-head">
+    <div><div class="eyebrow">CENTRO DE CONTROL</div><h2>Dashboard odontológico</h2><p>Resumen visual del rendimiento de Dental Clinic DC.</p></div>
+    <div class="dash-controls">
+      <label for="periodo">Período:</label>
+      <select id="periodo" aria-label="Seleccionar período"><option value="7">Últimos 7 días</option><option value="12" selected>Últimos 12 meses</option></select>
+      <button class="btn btn-light" id="resetBtn">Restablecer datos</button>
+    </div>
+  </div>
+  <div class="kpis">
+    <article class="kpi"><div class="kpi-top"><span>Citas registradas</span><span class="kpi-icon"></span></div><div class="kpi-value" id="kpiCitas">248</div><div class="kpi-note">Datos de demostración</div></article>
+    <article class="kpi"><div class="kpi-top"><span>Pacientes atendidos</span><span class="kpi-icon"></span></div><div class="kpi-value" id="kpiPacientes">186</div><div class="kpi-note">Datos de demostración</div></article>
+    <article class="kpi"><div class="kpi-top"><span>Tratamientos</span><span class="kpi-icon"></span></div><div class="kpi-value" id="kpiTratamientos">172</div><div class="kpi-note">Datos de demostración</div></article>
+    <article class="kpi"><div class="kpi-top"><span>Ingresos estimados</span><span class="kpi-icon"></span></div><div class="kpi-value" id="kpiIngresos">Q 38,450</div><div class="kpi-note">Datos de demostración</div></article>
+  </div>
+
+  <div class="charts">
+    <article class="chart-card"><div class="chart-title"><div><h3>Actividad de citas</h3><p>Citas programadas y completadas</p></div></div><div class="chart-box"><canvas id="citasChart" aria-label="Gráfica de citas"></canvas></div></article>
+    <article class="chart-card"><div class="chart-title"><div><h3>Tipos de tratamiento</h3><p>Distribución de procedimientos</p></div></div><div class="chart-box"><canvas id="tratamientosChart" aria-label="Gráfica de tratamientos"></canvas></div></article>
+    <article class="chart-card wide"><div class="chart-title"><div><h3>Ingresos de la clínica</h3><p>Ingresos mensuales en quetzales (Q)</p></div></div><div class="chart-box short"><canvas id="ingresosChart" aria-label="Gráfica de ingresos"></canvas></div></article>
+  </div>
+
+  <div class="lower-grid">
+    <article class="chart-card"><div class="chart-title"><div><h3>Estado de las citas</h3><p>Resumen de la agenda</p></div></div><div class="chart-box short"><canvas id="estadoChart" aria-label="Gráfica de estado de citas"></canvas></div></article>
+    <article class="chart-card"><div class="chart-title"><div><h3>Próximas citas (ejemplo)</h3><p>Lista de pacientes</p></div></div><div class="table-wrap"><table><thead><tr><th>Hora</th><th>Paciente</th><th>Servicio</th><th>Estado</th></tr></thead><tbody><tr><td>09:00</td><td>Paciente Karina Ambrosio</td><td>Limpieza</td><td><span class="status done">Confirmada</span></td></tr><tr><td>10:30</td><td>Paciente Yoselin Ambrosio</td><td>Revisión</td><td><span class="status pending">Pendiente</span></td></tr><tr><td>11:45</td><td>Paciente Daryl Dixon</td><td>Ortodoncia</td><td><span class="status done">Confirmada</span></td></tr><tr><td>14:00</td><td>Paciente Rick Grimes</td><td>Empaste</td><td><span class="status pending">Pendiente</span></td></tr></tbody></table></div><p class="empty-note">Pacientes activos</p></article>
+  </div>
+</section>
+<section class="section" id="sistema"><div class="section-heading"><h2>Un sistema para crecer</h2><p>El dashboard está preparado para recibir datos reales cuando se conecte a una base de datos.</p></div></section>
+</main>
+
+<div class="login-overlay" id="loginOverlay" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+  <div class="login-panel">
+    <div class="login-top">
+      <button class="login-close" id="loginCloseBtn" aria-label="Cerrar inicio de sesión">×</button>
+      <svg class="login-tooth" viewBox="0 0 100 110" role="img" aria-label="Logo DC">
+        <path d="M50 8 C31 1 11 13 10 36 C8 54 19 65 25 83 C30 101 40 106 45 87 L50 69 L55 87 C60 106 70 101 75 83 C81 65 92 54 90 36 C89 13 69 1 50 8Z" fill="#e7faff" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M51 26 C37 18 25 27 25 42 C25 56 36 63 48 55 L48 46 C39 51 34 45 35 39 C36 31 43 31 51 36Z" fill="#087f9c"/>
+        <path d="M54 26 L54 57 L67 57 C80 57 84 49 84 41 C84 31 77 26 67 26Z" fill="#20c4d8"/>
+        <path d="M62 34 L67 34 C74 34 76 37 76 42 C76 47 73 50 67 50 L62 50Z" fill="white"/>
+      </svg>
+      <h2 id="loginTitle">¡Qué gusto verte!</h2>
+      <p>Ingresa a tu espacio de Dental Clinic DC</p>
+    </div>
+    <form class="login-form" id="loginForm">
+      <div class="login-field">
+        <label for="loginUser">Usuario</label>
+        <div class="login-input-wrap"><span></span><input id="loginUser" name="username" autocomplete="username" placeholder="Escribe tu usuario" required></div>
+      </div>
+      <div class="login-field">
+        <label for="loginPassword">Contraseña</label>
+        <div class="login-input-wrap"><span></span><input id="loginPassword" name="password" type="password" autocomplete="current-password" placeholder="Escribe tu contraseña" required></div>
+      </div>
+      <p class="login-error" id="loginError" role="alert">Usuario o contraseña incorrectos. Inténtalo de nuevo.</p>
+      <button class="login-submit" type="submit">Iniciar sesión →</button>
+      <p class="login-hint">Acceso de demostración<br>Usuario: <strong>ADMIN</strong> · Contraseña: <strong>123</strong></p>
+    </form>
+  </div>
+</div>
+
+<footer class="footer"><span><strong>Dental Clinic DC</strong> · Transformación Digital Odontológica</span><span>© 2026 · Prototipo de demostración</span></footer>
+
+<script>
+
+(() => {
+  const overlay = document.getElementById('loginOverlay');
+  const openBtn = document.getElementById('loginOpenBtn');
+  const closeBtn = document.getElementById('loginCloseBtn');
+  const form = document.getElementById('loginForm');
+  const error = document.getElementById('loginError');
+  const userChip = document.getElementById('userChip');
+  const logoutBtn = document.getElementById('logoutBtn');
+  function openLogin(){overlay.classList.add('show');error.classList.remove('show');document.getElementById('loginUser').focus();}
+  function closeLogin(){overlay.classList.remove('show');}
+  openBtn.addEventListener('click', openLogin);
+  closeBtn.addEventListener('click', closeLogin);
+  overlay.addEventListener('click', e=>{if(e.target===overlay) closeLogin();});
+  document.addEventListener('keydown', e=>{if(e.key==='Escape') closeLogin();});
+  form.addEventListener('submit', e=>{
+    e.preventDefault();
+    const username=document.getElementById('loginUser').value.trim();
+    const password=document.getElementById('loginPassword').value;
+    if(username.toUpperCase()==='ADMIN' && password==='123'){
+      error.classList.remove('show');
+      closeLogin();
+      openBtn.style.display='none';
+      userChip.classList.add('show');
+      form.reset();
+      alert('¡Bienvenido a Dental Clinic DC, ADMIN!');
+    }else{error.classList.add('show');}
+  });
+  logoutBtn.addEventListener('click', ()=>{
+    userChip.classList.remove('show');
+    openBtn.style.display='';
+    alert('Has cerrado la sesión de demostración.');
+  });
+})();
+
+(() => {
+  const $ = id => document.getElementById(id);
+  const original = {
+    months:['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
+    scheduled:[18,22,25,20,28,24,30,27,32,26,34,38],
+    completed:[15,19,21,17,24,20,26,23,28,22,29,33],
+    income:[2400,2800,3100,2600,3500,3200,3900,3600,4200,3800,4500,4850],
+    treatments:[68,42,31,24,19],
+    statuses:[172,48,28]
+  };
+  const palette={blue:'#087f9c',cyan:'#20c4d8',light:'#9de8f0',navy:'#123b56',green:'#42b883',orange:'#f5b94c',gray:'#b7c8d1'};
+  Chart.defaults.font.family="'Nunito Sans', sans-serif";
+  Chart.defaults.color='#718797';
+  Chart.defaults.plugins.legend.labels.usePointStyle=true;
+  Chart.defaults.plugins.legend.labels.boxWidth=8;
+  let charts={};
+  function baseOptions(){return {responsive:true,maintainAspectRatio:false,animation:{duration:450},plugins:{legend:{position:'bottom',labels:{padding:18}}},scales:{x:{grid:{display:false},border:{display:false}},y:{beginAtZero:true,grid:{color:'#edf3f5'},border:{display:false},ticks:{precision:0}}}}}
+  function buildCharts(){
+    Object.values(charts).forEach(c=>c.destroy());
+    charts.citas=new Chart($('citasChart'),{type:'bar',data:{labels:original.months,datasets:[{label:'Programadas',data:original.scheduled,backgroundColor:palette.light,borderRadius:5},{label:'Completadas',data:original.completed,backgroundColor:palette.blue,borderRadius:5}]},options:baseOptions()});
+    charts.tratamientos=new Chart($('tratamientosChart'),{type:'doughnut',data:{labels:['Limpieza','Revisión','Empaste','Ortodoncia','Otros'],datasets:[{data:original.treatments,backgroundColor:[palette.blue,palette.cyan,palette.green,palette.orange,palette.gray],borderWidth:3,borderColor:'#fff',hoverOffset:7}]},options:{responsive:true,maintainAspectRatio:false,cutout:'62%',plugins:{legend:{position:'bottom',labels:{padding:15,usePointStyle:true,boxWidth:8}}}}});
+    charts.ingresos=new Chart($('ingresosChart'),{type:'line',data:{labels:original.months,datasets:[{label:'Ingresos (Q)',data:original.income,borderColor:palette.blue,backgroundColor:'rgba(32,196,216,.16)',fill:true,tension:.35,pointRadius:4,pointHoverRadius:6,pointBackgroundColor:palette.blue}]},options:{...baseOptions(),scales:{...baseOptions().scales,y:{beginAtZero:true,grid:{color:'#edf3f5'},border:{display:false},ticks:{callback:v=>'Q '+Number(v).toLocaleString('es-GT')}}}}});
+    charts.estado=new Chart($('estadoChart'),{type:'pie',data:{labels:['Completadas','Pendientes','Canceladas'],datasets:[{data:original.statuses,backgroundColor:[palette.green,palette.orange,palette.gray],borderWidth:3,borderColor:'#fff',hoverOffset:6}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{padding:18,usePointStyle:true,boxWidth:8}}}}});
+    updateKPIs(12);
+  }
+  function updateKPIs(period){
+    let scale=period===7?0.22:1;
+    $('kpiCitas').textContent=Math.round(original.scheduled.reduce((a,b)=>a+b,0)*scale).toLocaleString('es-GT');
+    $('kpiPacientes').textContent=Math.round(186*scale).toLocaleString('es-GT');
+    $('kpiTratamientos').textContent=Math.round(original.treatments.reduce((a,b)=>a+b,0)*scale).toLocaleString('es-GT');
+    $('kpiIngresos').textContent='Q '+Math.round(original.income.reduce((a,b)=>a+b,0)*scale).toLocaleString('es-GT');
+  }
+  function changePeriod(){
+    const period=Number($('periodo').value);
+    if(period===7){
+      const labels=['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'];
+      charts.citas.data.labels=labels;
+      charts.citas.data.datasets[0].data=[8,12,10,14,16,9,7];
+      charts.citas.data.datasets[1].data=[7,10,8,12,13,8,6];
+      charts.citas.update();
+      charts.ingresos.data.labels=labels;
+      charts.ingresos.data.datasets[0].data=[650,900,780,1100,1250,700,550];
+      charts.ingresos.update();
+      updateKPIs(7);
+    }else{
+      charts.citas.data.labels=original.months;
+      charts.citas.data.datasets[0].data=[...original.scheduled];
+      charts.citas.data.datasets[1].data=[...original.completed];
+      charts.citas.update();
+      charts.ingresos.data.labels=original.months;
+      charts.ingresos.data.datasets[0].data=[...original.income];
+      charts.ingresos.update();
+      updateKPIs(12);
+    }
+  }
+  $('periodo').addEventListener('change',changePeriod);
+  $('resetBtn').addEventListener('click',()=>{$('periodo').value='12';buildCharts();});
+  if(window.Chart){buildCharts();}
+  else {
+    document.querySelectorAll('.chart-box').forEach(el=>el.innerHTML='<p style="padding:20px;color:#718797">No se pudo cargar la librería de gráficas. Comprueba tu conexión a Internet y recarga la página.</p>');
+  }
+})();
+</script>
+</body>
+</html>
